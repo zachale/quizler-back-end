@@ -1,0 +1,15 @@
+<%=@question%> = ?
+
+<% if params[:user] == "1"%>
+    <%= form_with url: "/questions/submit", method: :get do |form|%>
+        <%= form.label :answer, "enter your answer:"%>
+        <%= form.number_field :answer%>
+        <%= form.hidden_field :question, value:@question%>
+        <%= form.submit "Submit"%>
+    <% end %>
+
+
+    <%if !@really_last_question.nil?%>
+        <h1>You got <%= @really_last_question.title%> <%=@correct%>! The answer was <%=@last_question.answer%> </h1>
+    <%end%>
+<%end%>
