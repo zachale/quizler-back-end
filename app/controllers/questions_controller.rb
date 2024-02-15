@@ -21,10 +21,14 @@ class QuestionsController < ApplicationController
       a = Question.find(n)
     end
 
-    #make available the question text!
+    #make the question text available!
     @question = a.title
-    @really_last_question = @last_question
-    @last_question = a
+
+    respond_to do |format|
+      msg = { :status => "ok", :message => @question, :html => "<b>...</b>" }
+      format.json  { render :json => msg }
+      format.html  { render :html => msg }
+    end
 
   end
 
@@ -42,6 +46,8 @@ class QuestionsController < ApplicationController
     else
       @correct = false
     end
+
+    
 
   end
 
