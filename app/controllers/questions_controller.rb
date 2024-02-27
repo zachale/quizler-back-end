@@ -25,7 +25,7 @@ class QuestionsController < ApplicationController
     @question = a.title
 
     respond_to do |format|
-      msg = { :status => "ok", :message => @question, }
+      msg = { :status => "ok", :message => @question }
       format.json  { render :json => msg }
       format.html  { render :html => msg }
     end
@@ -47,7 +47,11 @@ class QuestionsController < ApplicationController
       @correct = false
     end
 
-    
+    respond_to do |format|
+      msg = { :status => "ok", :message => @correct }
+      format.json  { render :json => msg }
+      format.html  { render :html => msg }
+    end
 
   end
 
