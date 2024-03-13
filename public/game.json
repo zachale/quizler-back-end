@@ -1,0 +1,17 @@
+// This is what I want a game object to look like
+
+
+// This object will be used to generate a predictable game that generates the same numbers for every player
+{
+
+  "creator":"Steve Jobs",
+  "attributes": {
+    "seed":"WPLGV",
+    "operators": "0100",
+    "maxAnswer": "324",
+    "operatorNumber": "4"
+  },
+  "leaderBoardID":"3256",
+  "expiryDate":"06-10-24"
+
+}
